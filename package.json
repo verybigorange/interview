@@ -1,0 +1,29 @@
+{
+  "name": "program",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production  rimraf ./dist && webpack",
+    "start": "cross-env NODE_ENV=development node ./server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chalk": "^2.3.1",
+    "cross-env": "^5.1.3",
+    "html-webpack-plugin": "^2.30.1",
+    "uglifyjs-webpack-plugin": "^1.2.0",
+    "webpack": "^3.11.0",
+    "webpack-dev-middleware": "^2.0.6",
+    "webpack-hot-middleware": "^2.21.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
