@@ -1,6 +1,7 @@
 // 入口文件
-import getCoord from './core';
 
+import store from './store';
 
+store.player = 'o'
 
 

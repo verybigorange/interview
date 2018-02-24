@@ -3,14 +3,15 @@
 *   @player 哪个玩家 （'x'或'o'）
 *   @chessboard 当前棋盘的二维数组
 */
-const getCoord = ((player,chessboard)=>{
-
+const getCoord = (()=>{
     // 数据缓存
     let cache = {}
     
-    return ()=>{
+    return (store)=>{
+        const {player,chessboard} = store;
+    
          //玩家检测
-        if(player !== 'x' || play !=='o'){
+        if(player !== 'x' && player !=='o'){
             alert("player error! It can only be x or o");
             return null
         }
