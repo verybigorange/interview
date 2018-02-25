@@ -1,6 +1,5 @@
 // 工具函数文件
 
-
 /* 
 * 代理
 * @store 所有数据 
@@ -18,11 +17,51 @@ export function proxy(store,key,initVal,inform){
     })
 }
 
+
 /* 
-* 对比
-* @oldValue 旧的值 
-* @newValue 新的值
+* 更新store里的数据,更新成功返回true。
+* @store 所有数据 
+* @x x坐标
+* @y y坐标
 */
-export function diff(oldValue,newValue){
-    
+export function update(store,x,y){
+   const { player,chessboard } = store.chess;
+
+   //如果该位置不存在棋子才能落子
+   if(chessboard[y][x] === 'e'){
+        let newchessboard = [...chessboard];
+        newchessboard[y][x] = player;
+        let newplayer
+        if(player === 'x'){
+            newplayer = 'o'
+        }else{
+            newplayer = 'x'
+        }
+
+        //更新store的chess数据
+        store.chess = {
+            player:newplayer,
+            chessboard:newchessboard,
+            currentCoord:[y,x]
+        }
+        return true
+   }else{
+       return false
+   }
+}
+
+/* 
+* 重置棋盘数据
+* @store 所有数据 
+*/
+export function resetChess(store){
+    store.chess = {
+        player:'x',     //当前初始默认的玩家
+        chessboard:[    // 当前棋盘的初始默认值
+            ['e','e','e'],
+            ['e','e','e'],
+            ['e','e','e'],
+        ],
+        currentCoord:[] //当前落子的位置
+    } 
 }

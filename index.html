@@ -5,8 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>3X3</title>
+    <style>
+        .container{
+            margin:50px auto;
+            width: 210px;
+            height: 210px;
+            border:2px solid #000;
+            background: #ffc477;
+        }
+        .info{
+            font-size: 18px;
+        }
+        .head{
+            text-align: center;
+        }
+        #result{
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="head">
+        <p class="title" id="info">3x3棋子小游戏</p>
+        <p>比赛结果：<span id="result">比赛中</span></p>
+        <button id="reset">重新开始</button>
+    </div>
+   
+    <div class="container">
+        <canvas id="canvas" width="210" height="210"></canvas>
+    </div>
 </body>
 </html>
